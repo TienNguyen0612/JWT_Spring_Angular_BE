@@ -71,13 +71,13 @@ public class AuthController {
         if (iUserRepository.existsByUsername(signUpRequest.getUsername())) {
             return ResponseEntity
                     .badRequest()
-                    .body(new MessageResponse("Error: Username is already taken!"));
+                    .body(new MessageResponse("Error: Username is already taken !"));
         }
 
         if (iUserRepository.existsByEmail(signUpRequest.getEmail())) {
             return ResponseEntity
                     .badRequest()
-                    .body(new MessageResponse("Error: Email is already in use!"));
+                    .body(new MessageResponse("Error: Email is already in use !"));
         }
 
         // Create new user's account
@@ -118,6 +118,6 @@ public class AuthController {
         user.setRoles(roles);
         iUserRepository.save(user);
 
-        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+        return ResponseEntity.ok(new MessageResponse("User registered successfully !"));
     }
 }
